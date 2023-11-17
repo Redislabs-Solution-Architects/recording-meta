@@ -1,0 +1,22 @@
+{
+    "name": "db1",
+    "type": "redis",
+    "memory_size": 1000000000,
+    "port": 12000,
+    "authentication_redis_pass": "redis",
+    "proxy_policy": "all-master-shards",
+    "sharding": true,
+    "shards_count": 2,
+    "shards_placement": "sparse",
+    "shard_key_regex": [{"regex": ".*\\{(?<tag>.*)\\}.*"}, {"regex": "(?<tag>.*)"}],
+    "replication": false,
+    "oss_cluster": false, 
+    "module_list": [{
+        "module_name":"ReJSON",
+        "module_args": ""
+    },
+    {
+        "module_name": "search",
+        "module_args": ""
+    }]
+}
